@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- <bean id="Alien" class="org.example.Alien" scope="prototype"> -->
+    <!--    <bean id="Alien" class="org.example.Alien" autowire="byName">-->
+
+    <bean id="Alien" class="org.example.Alien" autowire="byName">
+
+<!--        <constructor-arg name="age" value="75000"/>-->
+<!--        <constructor-arg name="laptop" ref="Laptop"/>-->
+<!--        <constructor-arg name="salary" value="21"/>-->
+
+        <property name="age" value="36"/>
+        <property name="salary" value="75000"/>
+<!--        <property name="computer" ref="laptop"/>-->
+
+<!--        <constructor-arg type="org.example.Laptop" ref="Laptop"/>-->
+<!--        <constructor-arg type="int" value="21"/>-->
+
+<!--        <constructor-arg index="1" value="75000"/>-->
+<!--        <constructor-arg index="2" ref="Laptop"/>-->
+<!--        <constructor-arg index="0" value="21"/>-->
+    </bean>
+
+    <bean id="laptop" class="org.example.Laptop" primary="true"/>
+    <bean id="computer" class="org.example.Desktop" lazy-init="true"/>
+
+</beans>
