@@ -24,7 +24,7 @@ public class SpringJpaApplication {
 
 		s2.setRegisterNo(8);
 		s2.setName("Abrar Hasan");
-		s2.setMarks(86);
+		s2.setMarks(88);
 
 		s3.setRegisterNo(1);
 		s3.setName("Aadhavan");
@@ -33,6 +33,12 @@ public class SpringJpaApplication {
 		repo.save(s1);
 		repo.save(s2);
 		repo.save(s3);
+
+		System.out.println(repo.findById(15).orElse(new Student()));
+		System.out.println(repo.findByName("Ajay Kumar"));
+		System.out.println(repo.findByMarksGreaterThan(87));
+
+		repo.delete(s2);
 	}
 
 }
