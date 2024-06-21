@@ -3,7 +3,6 @@ package com.example.spring_boot_rest;
 import com.example.spring_boot_rest.models.JobPost;
 import com.example.spring_boot_rest.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +23,7 @@ public class JobRestController {
         return service.getJob(postId);
     }
 
-    @PostMapping(path = "jobPost", consumes = {"application/xml"})
+    @PostMapping(path = "jobPost")
     public JobPost addJob(@RequestBody JobPost jobPost) {
         service.addJob(jobPost);
         return service.getJob(jobPost.getPostId());
